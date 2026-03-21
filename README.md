@@ -161,3 +161,51 @@ npx playwright test
 ## Licencia
 
 ISC
+
+
+# 🛒 Sauce Demo - Automatización E2E con Playwright y Cucumber
+
+Este repositorio contiene un proyecto de automatización de pruebas End-to-End (E2E) para el flujo de compras de la aplicación web [Sauce Demo](https://www.saucedemo.com/). 
+
+El proyecto está construido utilizando **Playwright**, **TypeScript** y **Cucumber** (BDD), implementando buenas prácticas de ingeniería de calidad y patrones de diseño escalables.
+
+---
+
+## 🚀 Estrategia de Automatización
+
+* **Framework Principal:** Implementación de pruebas End-to-End (E2E) robustas utilizando **Playwright** junto con **TypeScript**, asegurando una ejecución rápida, control avanzado del navegador y tipado estricto para prevenir errores en tiempo de desarrollo.
+* **Enfoque BDD (Behavior-Driven Development):** Integración de **Cucumber** para redactar los casos de prueba empleando la sintaxis **Gherkin** en español. Esta estrategia transforma las pruebas en documentación viva, facilitando el entendimiento y la colaboración entre los equipos de desarrollo, QA y negocio.
+* **Reportes Nativos:** Configuración adaptada para la generación de reportes automáticos en formato HTML (`cucumber-report.html`), permitiendo una visualización clara y auditable de los resultados de las ejecuciones.
+* **Preparación para Integración Continua (CI):** La inclusión del directorio `.github/workflows` establece la base para integrar las pruebas automatizadas en un pipeline de despliegue continuo (CI/CD) usando GitHub Actions.
+
+## 🧩 Patrones de Diseño Implementados
+
+* **Page Object Model (POM):** Se aplica este patrón estructural centralizando los localizadores y métodos de interacción en clases específicas dentro del directorio `tests/Pages` (ej. `LoginCompraPage.ts`, `ProductoCompraPage.ts`, `CheckOutCompraPage.ts`). Esto garantiza un bajo acoplamiento, alta cohesión y facilita el mantenimiento ante futuros cambios en la interfaz de usuario.
+* **Separación de Conceptos (Separation of Concerns):** El repositorio cuenta con una arquitectura modular y escalable dividida estratégicamente:
+  * `tests/Features/`: Almacena el comportamiento funcional del sistema escrito en lenguaje natural.
+  * `tests/Steps/`: Actúa como la capa de conexión (glue code), traduciendo los pasos Gherkin en llamadas a los métodos de las páginas.
+  * `utils/` y `config/`: Archivos de configuración transversal y utilidades de apoyo.
+
+## ⚙️ Manejo Eficiente de Escenarios
+
+* **Optimización de Flujos:** Uso de bloques de `Antecedentes` (Background) en Gherkin para extraer y reutilizar pasos precondicionales comunes a todos los escenarios, como la carga de la página y el inicio de sesión.
+* **Data-Driven Testing (Pruebas Basadas en Datos):** Implementación de `Esquemas del escenario` (Scenario Outlines) combinados con tablas de datos. Esta técnica permite validar de forma dinámica y eficiente múltiples casuísticas (como validaciones de campos incompletos en el checkout) minimizando la duplicación de código.
+
+---
+
+## 📁 Estructura del Proyecto
+
+```text
+📦 automation-playwright-sauce
+ ┣ 📂 .github/workflows/   # Configuración de pipelines para CI/CD
+ ┣ 📂 config/              # Configuraciones globales del framework
+ ┣ 📂 tests/
+ ┃ ┣ 📂 Features/          # Casos de prueba descritos en Gherkin (.feature)
+ ┃ ┣ 📂 Pages/             # Clases del patrón Page Object Model (POM)
+ ┃ ┣ 📂 Steps/             # Step definitions que unen Gherkin con Playwright
+ ┃ ┗ 📂 Tests/             # (Histórico) Scripts de prueba directos de Playwright
+ ┣ 📂 utils/               # Funciones y utilidades transversales
+ ┣ 📜 cucumber.js          # Archivo de configuración principal de Cucumber
+ ┣ 📜 package.json         # Dependencias y scripts del proyecto
+ ┣ 📜 playwright.config.ts # Configuración base de Playwright
+ ┗ 📜 tsconfig.json        # Configuración del compilador de TypeScript
