@@ -6,6 +6,7 @@ export class ProductoCompraPage {
     readonly producto1: Locator;
     readonly producto2: Locator;
     readonly producto3: Locator;
+    readonly elegircarrito: Locator;
 
     constructor(page:Page){
         this.page = page;
@@ -13,6 +14,7 @@ export class ProductoCompraPage {
         this.producto1 = page.locator('[data-test="add-to-cart-sauce-labs-backpack"]');
         this.producto2 = page.locator('[data-test="add-to-cart-sauce-labs-bolt-t-shirt"]');
         this.producto3 = page.locator('[data-test="add-to-cart-sauce-labs-fleece-jacket"]');
+        this.elegircarrito = page.locator('[data-test="shopping-cart-link"]')
     }
 
     async elegirProducto(){
@@ -23,6 +25,10 @@ export class ProductoCompraPage {
         await this.producto1.click();
         await this.producto2.click();
         await this.producto3.click();
+    }
+
+    async irCarrito(){
+        await this.elegircarrito.click();
     }
 
     
