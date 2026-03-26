@@ -5,6 +5,10 @@ export class LoginCompraPage {
     readonly txtUsuario: Locator;
     readonly txtPassword: Locator;
     readonly ingresalogin: Locator;
+<<<<<<< HEAD
+=======
+    readonly mensajeError: Locator;
+>>>>>>> 427e242 (agregando escenarios data driven saucedemo)
     
    
 
@@ -15,6 +19,10 @@ export class LoginCompraPage {
         this.txtUsuario = page.locator('[data-test="username"]');
         this.txtPassword = page.locator('[data-test="password"]');
         this.ingresalogin = page.locator('[data-test="login-button"]');
+<<<<<<< HEAD
+=======
+        this.mensajeError = page.locator('//h3[@data-test="error"]');
+>>>>>>> 427e242 (agregando escenarios data driven saucedemo)
         
 
     }
@@ -33,4 +41,12 @@ export class LoginCompraPage {
         await this.ingresalogin.click();
     }
 
+<<<<<<< HEAD
+=======
+      async obtenerMensajeErrorLogin(){
+        return this.mensajeError.textContent();
+      
+    }
+
+>>>>>>> 427e242 (agregando escenarios data driven saucedemo)
 }
