@@ -5,9 +5,9 @@ import { ProductoCompraPage } from '../Pages/ProductoCompraPage';
 
 // 1. ARREGLO DE USUARIOS
 const usuariospositivos = [
-    'standard_user',
-    'performance_glitch_user',
-    'visual_user'
+     'standard_user' ,
+     'performance_glitch_user' ,
+     'visual_user' 
 ];
 
 const usuariosnegativos = [
