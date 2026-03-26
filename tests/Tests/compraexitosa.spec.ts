@@ -21,7 +21,7 @@ import { ProductoCompraPage } from '../Pages/ProductoCompraPage';
                 await test.step('Lleno texto en el campo usuario ,contraseña e ingresamos ', async () => {
 
                     const logincomprapage = new LoginCompraPage(page);
-                    await logincomprapage.ingresarUsuario(); 
+                    await logincomprapage.ingresarUsuario('standard_user');
                     await logincomprapage.ingresarPassword();
                     await logincomprapage.ingresarLogin();
 
@@ -64,7 +64,7 @@ import { ProductoCompraPage } from '../Pages/ProductoCompraPage';
 
                 await test.step('Login', async () => {
                     const logincomprapage = new LoginCompraPage(page);
-                    await logincomprapage.ingresarUsuario();
+                    await logincomprapage.ingresarUsuario('standard_user');
                     await logincomprapage.ingresarPassword();
                     await logincomprapage.ingresarLogin();
 
@@ -106,7 +106,7 @@ import { ProductoCompraPage } from '../Pages/ProductoCompraPage';
                 await test.step('Lleno texto en el campo usuario ,contraseña e ingresamos ', async () => {
 
                     const logincomprapage = new LoginCompraPage(page);
-                    await logincomprapage.ingresarUsuario();
+                    await logincomprapage.ingresarUsuario('standard_user');
                     await logincomprapage.ingresarPassword();
                     await logincomprapage.ingresarLogin();
 
@@ -134,13 +134,7 @@ import { ProductoCompraPage } from '../Pages/ProductoCompraPage';
                     const checkoutcomprapage = new CheckOutCompraPage(page);
                     await expect(checkoutcomprapage.obtenerMensajeExito()).resolves.toBe('Thank you for your order!')
                 })
-                // este es un falso positivo no hay mensaje de validacion para validar que el carrito de compras esta vacio o
-                // se refleja en el flujo final o en el flujo del carrito de compras
-
-
-
-
-
+            
 
 
 
@@ -160,7 +154,7 @@ import { ProductoCompraPage } from '../Pages/ProductoCompraPage';
                 await test.step('Lleno texto en el campo usuario ,contraseña e ingresamos ', async () => {
 
                     const logincomprapage = new LoginCompraPage(page);
-                    await logincomprapage.ingresarUsuario();
+                    await logincomprapage.ingresarUsuario('standard_user');
                     await logincomprapage.ingresarPassword();
                     await logincomprapage.ingresarLogin();
 
@@ -205,7 +199,7 @@ import { ProductoCompraPage } from '../Pages/ProductoCompraPage';
                     await test.step('Lleno texto en el campo usuario ,contraseña e ingresamos ', async () => {
 
                         const logincomprapage = new LoginCompraPage(page);
-                        await logincomprapage.ingresarUsuario();
+                       await logincomprapage.ingresarUsuario('standard_user');
                         await logincomprapage.ingresarPassword();
                         await logincomprapage.ingresarLogin();
 
@@ -246,7 +240,7 @@ import { ProductoCompraPage } from '../Pages/ProductoCompraPage';
                     await test.step('Lleno texto en el campo usuario ,contraseña e ingresamos ', async () => {
 
                         const logincomprapage = new LoginCompraPage(page);
-                        await logincomprapage.ingresarUsuario();
+                        await logincomprapage.ingresarUsuario('standard_user');
                         await logincomprapage.ingresarPassword();
                         await logincomprapage.ingresarLogin();
 

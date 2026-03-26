@@ -34,7 +34,7 @@ Given('que el usuario navega a la pagina de Sauce Demo', async () => {
 });
 
 Given('el usuario inicia sesion con credenciales validas', async () => {
-    await loginPage.ingresarUsuario();
+    await loginPage.ingresarUsuario('standard_user');
     await loginPage.ingresarPassword();
     await loginPage.ingresarLogin();
 });
